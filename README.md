@@ -27,13 +27,35 @@ This should capture following parameters:
 
 _Game class:_
 
-**Properties:** home team, away team, home team score, away team score, start time, end time
+    **Properties:** home team, away team, home team score, away team score, start time, end time
 
-**Methods:** update_score, finish_game, repr
+    **Methods:** update_score, finish_game, total_Score, get_scores, 
 
 _Scoreboard class_:
 
-**Properties:** list of Match objects
+    **Properties:** list of Match objects
 
-**Methods:** start_game, update_score, finish_game, get_summary, repr
+     **Methods:** start_game, update_score, check_if_match_ongoing, finish_game, get_games_summary
+     
+ ## Unit Tests
+ 
+ This library was developed using test driven approach where tests were thought out properly. Moreover, these tests utilize the sample data given below.
+ 
+ Sample games can be inserted in the scoreboard based on below sequence. 
+ 
+      a. Mexico 0 - Canada 5
+      b. Spain 10 - Brazil 2
+      c. Germany 2 - France 2
+      d. Uruguay 6 - Italy 6
+      e. Argentina 3 - Australia 1
+      
+  Summary should be generated as per below:
+  
+       1. Uruguay 6 - Italy 6
+       2. Spain 10 - Brazil 2
+       3. Mexico 0 - Canada 5
+       4. Argentina 3 - Australia 1
+       5. Germany 2 - France 2
+      
+      
 
