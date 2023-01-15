@@ -20,3 +20,6 @@ class Game:
         """ Invoking this method will end the game and should be triggered from the scoreboard class ideally """
         self.end_time= datetime.now()
 
+    def total_score(self):
+        """This method returns the sum of scores of home and away teams which can be used for scoreboard"""
+        return self.home_score + self.away_score
