@@ -70,14 +70,14 @@ _Scoreboard class_:
 
 ## Some examples on running the library
 
-    ```
-    from scorecardlib.scoreboard import Scoreboard
-    leaderboard = Scoreboard()
-    home_team = "Germany"
-    away_team = "France"
-    leaderboard.start_game(home_team, away_team)
-    leaderboard.update_score(home_team, away_team, 10, 5)
-    print(leaderboard.games[match_key].home_score)
-    print(leaderboard.games[match_key].away_score)
+```
+from scorecardlib.scoreboard import Scoreboard
+leaderboard = Scoreboard()
+home_team = "Germany"
+away_team = "France"
+leaderboard.start_game(home_team, away_team)
+leaderboard.update_score(home_team, away_team, 10, 5)
+print(leaderboard.games[match_key].home_score)
+print(leaderboard.games[match_key].away_score)
 
-    ```
+```
