@@ -15,3 +15,8 @@ class Game:
         """"Method to update the score of an individual match"""
         self.home_score = home_score
         self.away_score = away_score
+
+    def finish_game(self):
+        """ Invoking this method will end the game and should be triggered from the scoreboard class ideally """
+        self.end_time= datetime.now()
+

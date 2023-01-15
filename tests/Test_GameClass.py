@@ -29,4 +29,15 @@ class TestGame(TestCase):
         self.assertIsNotNone(game.start_time)
         self.assertIsNone(game.end_time)
 
+    def test_finish_game(self):
+        game = Game(home_team="Mexico", away_team="Canada")
+        game.update_score(home_score=0, away_score=10)
+        self.assertEqual(game.home_team, "Mexico")
+        self.assertEqual(game.away_team, "Canada")
+        self.assertEqual(game.home_score, 0)
+        self.assertEqual(game.away_score, 10)
+        game.finish_game()
+        self.assertIsNotNone(game.start_time)
+        self.assertIsNotNone(game.end_time)
+
 
