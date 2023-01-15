@@ -28,5 +28,5 @@ class Game:
         return [self.home_score, self. away_score]
 
 
-    def __repr__(self):
+    def __str__(self):
         return f" Match : {self.home_team} {self.home_score} - {self.away_team} {self.away_score}"
