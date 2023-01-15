@@ -24,5 +24,9 @@ class Game:
         """This method returns the sum of scores of home and away teams which can be used for scoreboard"""
         return self.home_score + self.away_score
 
+    def get_scores(self):
+        return [self.home_score, self. away_score]
+
+
     def __repr__(self):
         return f" Match : {self.home_team} {self.home_score} - {self.away_team} {self.away_score}"

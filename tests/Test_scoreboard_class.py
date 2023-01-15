@@ -72,7 +72,9 @@ class TestScoreBoard(TestCase):
         leaderboard.start_game("Mexico", "Canada")
         leaderboard.start_game("Spain", "Brazil")
         leaderboard.start_game("Germany", "France")
-        time.sleep(10)
+        # adding some delay to make sure that there is a delay between starting of two games
+        # which have similar total score
+        time.sleep(5)
         leaderboard.start_game("Uruguay", "Italy")
         leaderboard.start_game("Argentina", "Australia")
 
