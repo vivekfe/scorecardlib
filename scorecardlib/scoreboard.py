@@ -34,7 +34,7 @@ class Scoreboard:
             self.games.pop(match_key)
 
     def get_games_summary(self, verbose=True):
-        sorted_games = sorted(self.games.values(), key= lambda x: (x.total_score(), x.start_time), reverse=True)
+        sorted_games = sorted(self.games.values(), key=lambda x: (x.total_score(), x.start_time), reverse=True)
         if verbose:
             for game in sorted_games:
                 print(game)
