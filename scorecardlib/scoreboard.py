@@ -14,6 +14,7 @@ class Scoreboard:
         self.games[f"{home_team}-{away_team}"] = game
 
     def check_if_match_ongoing(self, home_team, away_team):
+        """This takes care of the edge cases where the score update is failed if a match does not exist"""
         if f"{home_team}-{away_team}" not in self.games.keys():
             # validate if the given combination of teams exist in scoreboard
             raise Exception(f"There is no ongoing game between {home_team} and {away_team}\n")
