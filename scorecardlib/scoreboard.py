@@ -27,6 +27,11 @@ class Scoreboard:
             self.games[match_key].home_score = home_score
             self.games[match_key].away_score = away_score
 
+    def get_game_score(self, home_team, away_team):
+        match_key = f"{home_team}-{away_team}"
+        if self.check_if_match_ongoing(home_team, away_team):
+            return self.games[match_key].get_scores()
+
     def finish_game(self, home_team, away_team):
         if self.check_if_match_ongoing(home_team, away_team):
             match_key = f"{home_team}-{away_team}"
@@ -40,9 +45,3 @@ class Scoreboard:
             for game in sorted_games:
                 print(game)
         return sorted_games
-
-    def get_game_score(self, home_team, away_team):
-        match_key = f"{home_team}-{away_team}"
-        if self.check_if_match_ongoing(home_team, away_team):
-            return self.games[match_key].get_scores()
-

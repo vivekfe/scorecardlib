@@ -27,15 +27,16 @@ This should capture following parameters:
 
 _Game class:_
 
-    **Properties:** home team, away team, home team score, away team score, start time, end time
+**Properties:** home team, away team, home team score, away team score, start time, end time
 
-    **Methods:** update_score, finish_game, total_Score, get_scores, 
+**Methods:** update_score, finish_game, total_Score, get_scores
 
 _Scoreboard class_:
 
-    **Properties:** list of Match objects
+**Properties:** list of Match objects
 
-    **Methods:** start_game, update_score, check_if_match_ongoing, finish_game, get_games_summary
+**Methods:** start_game, update_score, check_if_match_ongoing, get_game_score, finish_game, get_games_summary
+
      
  ## Unit Tests
  
