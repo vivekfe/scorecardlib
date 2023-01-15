@@ -1,4 +1,4 @@
-from scorecardlib.game import Game
+from src.game import Game
 from dataclasses import dataclass, field
 from typing import Dict
 

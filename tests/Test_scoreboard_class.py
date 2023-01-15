@@ -1,6 +1,6 @@
 import time
 from unittest import TestCase
-from scorecardlib.scoreboard import Scoreboard
+from src.scoreboard import Scoreboard
 
 """Sample table provided as an input and can be used for writing tests as well"""
 
