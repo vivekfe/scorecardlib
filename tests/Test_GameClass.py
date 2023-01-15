@@ -1,5 +1,5 @@
 from unittest import TestCase
-from src.game import Game
+from scorecardlib.game import Game
 """Sample table provided as an input and can be used for writing tests as well"""
 
 # a. Mexico 0 - Canada 5
