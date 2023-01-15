@@ -28,10 +28,12 @@ This should capture following parameters:
 _Game class:_
 
 **Properties:** home team, away team, home team score, away team score, start time, end time
+
 **Methods:** update_score, finish_game, repr
 
 _Scoreboard class_:
 
 **Properties:** list of Match objects
+
 **Methods:** start_game, update_score, finish_game, get_summary, repr
 
