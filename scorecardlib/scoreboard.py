@@ -33,6 +33,9 @@ class Scoreboard:
             # finishing a game from leaderboard will trigger  finish_game of the Game class
             self.games.pop(match_key)
 
-    def get_games_summary(self):
-        sorted_games = sorted(self.games, key= lambda x: (x.total_score(), x.start_tim), reverse=True)
+    def get_games_summary(self, verbose=True):
+        sorted_games = sorted(self.games.values(), key= lambda x: (x.total_score(), x.start_time), reverse=True)
+        if verbose:
+            for game in sorted_games:
+                print(game)
         return sorted_games

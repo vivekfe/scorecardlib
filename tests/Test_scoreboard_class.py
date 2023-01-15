@@ -1,3 +1,4 @@
+import time
 from unittest import TestCase
 from scorecardlib.scoreboard import Scoreboard
 
@@ -71,6 +72,7 @@ class TestScoreBoard(TestCase):
         leaderboard.start_game("Mexico", "Canada")
         leaderboard.start_game("Spain", "Brazil")
         leaderboard.start_game("Germany", "France")
+        time.sleep(10)
         leaderboard.start_game("Uruguay", "Italy")
         leaderboard.start_game("Argentina", "Australia")
 
@@ -79,4 +81,34 @@ class TestScoreBoard(TestCase):
         leaderboard.update_score("Germany", "France", 2, 2)
         leaderboard.update_score("Uruguay", "Italy", 6, 6)
         leaderboard.update_score("Argentina", "Australia", 3, 1)
-        pass
+
+        # 1. Uruguay 6 - Italy 6
+        # 2. Spain 10 - Brazil 2
+        # 3. Mexico 0 - Canada 5
+        # 4. Argentina 3 - Australia 1
+        # 5. Germany 2 - France 2
+        summary = leaderboard.get_games_summary(verbose=True)
+        self.assertEqual(summary[0].home_team, "Uruguay")
+        self.assertEqual(summary[0].away_team, "Italy")
+        self.assertEqual(summary[0].home_score, 6)
+        self.assertEqual(summary[0].away_score, 6)
+
+        self.assertEqual(summary[1].home_team, "Spain")
+        self.assertEqual(summary[1].away_team, "Brazil")
+        self.assertEqual(summary[1].home_score, 10)
+        self.assertEqual(summary[1].away_score, 2)
+
+        self.assertEqual(summary[2].home_team, "Mexico")
+        self.assertEqual(summary[2].away_team, "Canada")
+        self.assertEqual(summary[2].home_score, 0)
+        self.assertEqual(summary[2].away_score, 5)
+
+        self.assertEqual(summary[3].home_team, "Argentina")
+        self.assertEqual(summary[3].away_team, "Australia")
+        self.assertEqual(summary[3].home_score, 3)
+        self.assertEqual(summary[3].away_score, 1)
+
+        self.assertEqual(summary[4].home_team, "Germany")
+        self.assertEqual(summary[4].away_team, "France")
+        self.assertEqual(summary[4].home_score, 2)
+        self.assertEqual(summary[4].away_score, 2)
