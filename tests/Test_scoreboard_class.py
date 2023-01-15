@@ -114,3 +114,20 @@ class TestScoreBoard(TestCase):
         self.assertEqual(summary[4].away_team, "France")
         self.assertEqual(summary[4].home_score, 2)
         self.assertEqual(summary[4].away_score, 2)
+
+    def test_get_score_from_scoreboard(self):
+        leaderboard = Scoreboard()
+        leaderboard.start_game("Mexico", "Canada")
+        leaderboard.start_game("Spain", "Brazil")
+        leaderboard.start_game("Germany", "France")
+        leaderboard.start_game("Uruguay", "Italy")
+        leaderboard.start_game("Argentina", "Australia")
+
+        leaderboard.update_score("Mexico", "Canada", 0, 5)
+        leaderboard.update_score("Spain", "Brazil", 10, 2)
+        leaderboard.update_score("Germany", "France", 2, 2)
+        leaderboard.update_score("Uruguay", "Italy", 6, 6)
+        leaderboard.update_score("Argentina", "Australia", 3, 1)
+        response = f"Scores for Argentina-Australia is 3-1"
+        self.assertEqual(leaderboard.get_game_score("Argentina", "Australia"), response)
+

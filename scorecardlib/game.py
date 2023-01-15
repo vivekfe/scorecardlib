@@ -25,7 +25,7 @@ class Game:
         return self.home_score + self.away_score
 
     def get_scores(self):
-        return [self.home_score, self. away_score]
+        return f"Scores for {self.home_team}-{self.away_team} is {self.home_score}-{self.away_score}"
 
 
     def __str__(self):

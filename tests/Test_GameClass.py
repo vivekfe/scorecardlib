@@ -62,4 +62,5 @@ class TestGame(TestCase):
     def test_get_score(self):
         game = Game(home_team="Spain", away_team="Brazil")
         game.update_score(home_score=10, away_score=2)
-        self.assertEqual(game.get_scores(), [10, 2])
+        response = f"Scores for Spain-Brazil is 10-2"
+        self.assertEqual(game.get_scores(), response)
