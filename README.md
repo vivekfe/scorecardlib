@@ -35,7 +35,7 @@ _Scoreboard class_:
 
     **Properties:** list of Match objects
 
-     **Methods:** start_game, update_score, check_if_match_ongoing, finish_game, get_games_summary
+    **Methods:** start_game, update_score, check_if_match_ongoing, finish_game, get_games_summary
      
  ## Unit Tests
  
@@ -57,5 +57,26 @@ _Scoreboard class_:
        4. Argentina 3 - Australia 1
        5. Germany 2 - France 2
       
-      
 
+## How to install the library 
+
+- Clone this library locally on your machine using https://github.com/vivekfe/scorecardlib.git
+
+- Navigate to newly created folder on your machine using command line or powershell. You should be able to see a file named Pyproject.toml
+
+- Since all the configurations already exists, please run **poetry install** to install the virtual environment.
+
+- Open the project using Pycharm and run all the tests to see if the project is working correctly.
+
+## Some examples on running the library
+
+    ```
+    from scorecardlib.scoreboard import Scoreboard
+    leaderboard = Scoreboard()
+    home_team = "Germany"
+    away_team = "France"
+    leaderboard.start_game(home_team, away_team)
+    leaderboard.update_score(home_team, away_team, 10, 5)
+    print(leaderboard.games[match_key].home_score)
+    print(leaderboard.games[match_key].away_score)
+    ```
