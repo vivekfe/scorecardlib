@@ -80,6 +80,13 @@ or
 
 - Open the project using Pycharm and run all the tests to see if the project is working correctly.
 
+## Building package yourself
+
+#### python setup.py sdist
+
+#### twine upload .\dist\scorecardlib-1.1.tar.gz
+
+
 ## Some examples on running the library
 
 ```

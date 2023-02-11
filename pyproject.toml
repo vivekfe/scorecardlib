@@ -11,6 +11,7 @@ pandas = "^1.5.2"
 pytest = "^7.2.1"
 setuptools = "^67.2.0"
 twine = "^4.0.2"
+ez_setup = "^0.9"
 
 
 [build-system]
