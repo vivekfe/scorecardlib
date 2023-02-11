@@ -22,6 +22,21 @@ class TestScoreBoard(TestCase):
         self.assertEqual(leaderboard.games["Germany-France"].home_team, "Germany")
         self.assertEqual(leaderboard.games["Germany-France"].away_team, "France")
 
+    def test_game_exists(self):
+        leaderboard = Scoreboard()
+        home_team = "Germany"
+        away_team = "France"
+        leaderboard.start_game(home_team, away_team)
+
+        with self.assertRaises(Exception) as context:
+            leaderboard.start_game(home_team, away_team)
+
+        self.assertTrue(f"There is an ongoing game between {home_team} and {away_team}\n" in str(context.exception))
+
+
+
+
+
     def test_update_Score(self):
         leaderboard = Scoreboard()
         home_team = "Germany"

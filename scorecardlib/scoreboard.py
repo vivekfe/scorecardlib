@@ -11,7 +11,10 @@ class Scoreboard:
         """Calling this method with team names will add this as
         a key as joins of names and game  instance as value"""
         game = Game(home_team, away_team)
-        self.games[f"{home_team}-{away_team}"] = game
+        if f"{home_team}-{away_team}" in self.games.keys():
+            raise Exception(f"There is an ongoing game between {home_team} and {away_team}\n")
+        else:
+            self.games[f"{home_team}-{away_team}"] = game
 
     def check_if_match_ongoing(self, home_team, away_team):
         """This takes care of the edge cases where the score update is failed if a match does not exist"""
