@@ -10,4 +10,5 @@ setup(
     author_email='435616+vivekfe@users.noreply.github.com',
 
     packages=['scorecardlib'],
+    install_requires=['ez_setup', 'pytest'],
 )
