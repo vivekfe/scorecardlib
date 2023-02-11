@@ -9,5 +9,5 @@ setup(
     author='Vivek SRIVASTAVA',
     author_email='435616+vivekfe@users.noreply.github.com',
 
-    py_modules=['scorecardlib'],
+    packages=['scorecardlib'],
 )

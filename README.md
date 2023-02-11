@@ -11,6 +11,9 @@
 
 You are working in a sports data company, and we would like you to develop a new Live Football ##World Cup Scoreboard library (or frontend application) that shows all the ongoing matches and their ##scores.
 
+you can install this library using pip which downloads the package from [PyPi](https://pypi.org/project/scorecardlib/). 
+
+
 ### The scoreboard supports the following operations:
 
 1. Start a new game, assuming initial score 0 – 0 and adding it the scoreboard.
@@ -61,6 +64,14 @@ _Scoreboard class_:
 
 ## How to install the library 
 
+#### pip install scorecardlib  
+
+In case of issues, try 
+
+#### python -m pip install --upgrade --no-cache-dir --use-deprecated=legacy-resolver scorecardlib==<version_no>
+
+or 
+
 - Clone this library locally on your machine using https://github.com/vivekfe/scorecardlib.git
 
 - Navigate to newly created folder on your machine using command line or powershell. You should be able to see a file named Pyproject.toml
@@ -78,6 +89,7 @@ home_team = "Germany"
 away_team = "France"
 leaderboard.start_game(home_team, away_team)
 leaderboard.update_score(home_team, away_team, 10, 5)
+match_key = f"{home_team}-{away_team}"
 print(leaderboard.games[match_key].home_score)
 print(leaderboard.games[match_key].away_score)
 
